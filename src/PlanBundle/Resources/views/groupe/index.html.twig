@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 style="font-family: 'Times New Roman' ;margin-left: 200px ">Les groupes</h1>
+<br><br>
+    <table  class="table table-hover  " style="background-color: white;width: 1000px;margin-left: 200px" >
+        <thead  >
+            <tr style="height: 45px;">
+
+                <th style="font-family: 'Times New Roman' ;font-size: 18px ;width:400px;" >Nom du group</th>
+                <th style="font-family: 'Times New Roman';font-size:18px;horiz-align: left;width:300px;" >Afficher</th>
+                           <th style="font-family: 'Times New Roman';font-size:18px;width:300px;"> Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for groupe in groupes %}
+            <tr>
+
+                <td>{{ groupe.nomGroup }}</td>
+                <td>
+
+                           <a href="{{ path('groupe_show', { 'idGroup': groupe.idGroup }) }}" class="fa fa-list-alt"  style="color: #ce8483;font-size: 15px;"></a>
+
+
+
+                </td>
+                <td>
+                     <a href="{{ path('groupe_edit', { 'idGroup': groupe.idGroup }) }}" class="fa fa-edit" style="color: green;" ></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+<br><hr>
+    <ul>
+        <div style="width: 100%; overflow: hidden; ">
+            <div style="width: 600px; float: left;">
+                <a href="{{ path('groupe_new') }}" class="btn btn-primary" style="margin-left: 200px">Créer un groupe</a>
+        </div>
+            <div style="margin-left: 400px;">
+        <a href="{{ path('groupe_Kids') }}" class="btn btn-danger">Liste des enfants sans groupe</a>
+            </div>
+        </div>
+    </ul>
+
+{% endblock %}

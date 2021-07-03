@@ -1,0 +1,12 @@
+plan:
+    resource: "@PlanBundle/Resources/config/routing.yml"
+    prefix:   /Plan
+
+event:
+    resource: "@eventBundle/Resources/config/routing.yml"
+    prefix:   /event
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+

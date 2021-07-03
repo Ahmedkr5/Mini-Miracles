@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 style="font-family: 'Times New Roman' ; ">Créer un Emploi du temps</h1>
+    <br><br>
+<table class="table"style="background-color: white">
+    {{ form_start(form) }}
+    <tr>
+        <td> Nom du Group</td>
+        <td>{{ form_widget(form.idGroup) }}</td>
+    </tr>
+    <tr>
+        <td> Numéro de la salle</td>
+        <td>{{ form_widget(form.idSalle) }}</td>
+    </tr>
+    <tr>
+        <td> Jour</td>
+        <td> {{ form_widget(form.jour) }}</td>
+    </tr>
+    <tr>
+        <td> Séance Matin</td>
+        <td>{{ form_widget(form.seanceMatin) }}</td>
+    </tr>
+    <tr>
+        <td> Séance soir</td>
+        <td> {{ form_widget(form.seanceSoir) }}</td>
+    </tr>
+
+</table>
+<div style="width: 100%; overflow: hidden;">
+    <div style="width: 10px; float: left;">
+            <a href="{{ path('emploi_index') }}" class="btn btn-primary" style="font-size: 20px">Retour</a></div>
+    <div style="margin-left: 1000px;">
+    <input type="submit" value="Créer" class="btn btn-success" style="font-size: 20px"/>
+    </div>
+</div>
+    {{ form_end(form) }}
+{% endblock %}

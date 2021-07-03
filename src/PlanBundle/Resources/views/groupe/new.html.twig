@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1 style="margin-left: 200px">Ajouter un groupe</h1><br><br>
+
+    <br><br><br>
+    <table class="table" style="background-color: white;width: 800px;margin-left: 200px">
+        <tr><td><b>
+    {{ form_start(form) }}
+                Nom du Groupe</b>
+                {{ form_widget(form.nomGroup) }}</td>
+            <td>
+        <input type="submit" value="Ajouter"  class="btn btn-success"/>
+    {{ form_end(form) }}
+            </td>
+        </tr>
+    </table>
+
+
+            <a href="{{ path('groupe_index') }}"  class="btn btn-primary" style="margin-left: 200px">Retour</a>
+
+{% endblock %}

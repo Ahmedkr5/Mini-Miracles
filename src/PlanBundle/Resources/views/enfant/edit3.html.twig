@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <br><br>
+    <table class="table"style="background-color: white">
+    {{ form_start(f) }}
+    <tr>
+        <td>{{ form_label(f.nom) }}</td>
+        <td>{{ form_widget(f.nom) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_label(f.prenom) }}</td>
+        <td>{{ form_widget(f.prenom) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_label(f.datenaiss) }}</td>
+        <td>{{ form_widget(f.datenaiss) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form_label(f.sexe) }}</td>
+        <td>{{ form_widget(f.sexe) }}</td>
+    </tr>
+    <tr>
+        <td >{{ form_label(f.idGroup) }}</td>
+        <td>{{ form_widget(f.idGroup) }}</td>
+    </tr>
+
+
+    <td></td>
+    <td>{{ form_widget(f.Ajout,{'label':'Modifier','attr': {'class': 'btn btn-info  '}}) }}</td>
+    {{ form_end(f)}}
+
+
+
+{% endblock %}

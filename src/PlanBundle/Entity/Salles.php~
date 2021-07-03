@@ -1,0 +1,97 @@
+<?php
+
+namespace PlanBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Salles
+ *
+ * @ORM\Table(name="salles")
+ * @ORM\Entity(repositoryClass="PlanBundle\Repository\SallesRepository")
+ */
+class Salles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="num_salle", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $numSalle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_salle", type="string", length=8, nullable=false)
+     */
+    private $nomSalle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="capacite", type="string", length=11, nullable=false)
+     */
+    private $capacite;
+
+
+
+    /**
+     * Get numSalle
+     *
+     * @return integer
+     */
+    public function getNumSalle()
+    {
+        return $this->numSalle;
+    }
+
+    /**
+     * Set nomSalle
+     *
+     * @param string $nomSalle
+     *
+     * @return Salles
+     */
+    public function setNomSalle($nomSalle)
+    {
+        $this->nomSalle = $nomSalle;
+
+        return $this;
+    }
+
+    /**
+     * Get nomSalle
+     *
+     * @return string
+     */
+    public function getNomSalle()
+    {
+        return $this->nomSalle;
+    }
+
+    /**
+     * Set capacite
+     *
+     * @param string $capacite
+     *
+     * @return Salles
+     */
+    public function setCapacite($capacite)
+    {
+        $this->capacite = $capacite;
+
+        return $this;
+    }
+
+    /**
+     * Get capacite
+     *
+     * @return string
+     */
+    public function getCapacite()
+    {
+        return $this->capacite;
+    }
+}

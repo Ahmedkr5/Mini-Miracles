@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br><br>
+    <h1 style="font-family: 'Times New Roman'"> Modifier le groupe</h1>
+<br><br><br>
+    <table class="table" style="background-color: white;width: 800px">
+        <tr><td ><b>
+    {{ form_start(edit_form) }}
+
+                Nom du Groupe</b>
+        {{ form_widget(edit_form.nomGroup) }}</td>
+            <td>
+        <input type="submit" value="Modifier"class="btn btn-success" />
+            {{ form_end(edit_form) }}</td>
+            <td>    {{ form_start(delete_form) }}
+            <input type="submit" value="Supprimer" class="btn btn-danger">
+            {{ form_end(delete_form) }}</td>
+
+        </tr>
+
+
+    </table>
+
+            <a href="{{ path('groupe_index') }}" class="btn btn-primary">Retour</a>
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Enfants list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Datenaiss</th>
+                <th>Sexe</th>
+                <th>Group</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for e in enfants %}
+            <tr>
+                <td><a href="{{ path('enfant_show', { 'id': e.id }) }}">{{ e.id }}</a></td>
+                <td>{{ e.nom }}</td>
+                <td>{{ e.prenom }}</td>
+                <td>{% if e.datenaiss %}{{ e.datenaiss|date("F - d - Y") }}{% endif %}</td>
+                <td>{{ e.sexe }}</td>
+
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('enfant_show', { 'id': e.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('enfant_edit', { 'id': e.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,181 @@
+emploi_mail:
+    path:     /emploi4
+    defaults: { _controller: "PlanBundle:Emploi:mail" }
+emploi_index:
+    path:     /emploi
+    defaults: { _controller: "PlanBundle:Emploi:index" }
+emploi_Frontindex:
+    path:     /emploiFront
+    defaults: { _controller: "PlanBundle:Emploi:Frontindex" }
+
+emploi_show:
+    path:     /emploi/{idGroup}/show
+    defaults: { _controller: "PlanBundle:Emploi:show" }
+    methods:  GET
+
+emploi_Frontshow:
+    path:     /emploi/{idGroup}/Frontshow
+    defaults: { _controller: "PlanBundle:Emploi:Frontshow" }
+    methods:  GET
+
+
+emploi_new:
+    path:     /emploi/new
+    defaults: { _controller: "PlanBundle:Emploi:new" }
+    methods:  [GET, POST]
+
+emploi_edit:
+    path:     /emploi/{idemp}/edit
+    defaults: { _controller: "PlanBundle:Emploi:edit" }
+    methods:  GET
+emploi_pdf:
+    path:     /groupe/showpdf/{idGroup}
+    defaults: { _controller: "PlanBundle:Emploi:pdf" }
+
+
+
+emploimobile_readSalle :
+    path:     /emploisalle/{idGroup}
+    defaults: { _controller: "PlanBundle:Emploimobile:readSalle" }
+emploimobile_ChoseGroup:
+    path:     /emploisalle
+    defaults: { _controller: "PlanBundle:Emploimobile:ChoseGroup" }
+
+
+
+
+
+
+
+
+
+
+
+
+
+plan_homepage:
+    path:     /
+    defaults: { _controller: PlanBundle:Default:index }
+salles_index:
+    path:     /Salles
+    defaults: { _controller: "PlanBundle:Salles:index" }
+
+
+salles_show:
+    path:     /Salles/{numSalle}/show
+    defaults: { _controller: "PlanBundle:Salles:show" }
+    methods:  GET
+
+salles_new:
+    path:     /Salles/new
+    defaults: { _controller: "PlanBundle:Salles:new" }
+    methods:  [GET, POST]
+
+salles_edit:
+    path:     /Salles/{numSalle}/edit
+    defaults: { _controller: "PlanBundle:Salles:edit" }
+    methods:  [GET, POST]
+
+salles_delete:
+    path:     /Salles/{numSalle}/delete
+    defaults: { _controller: "PlanBundle:Salles:delete" }
+    methods:  DELETE
+groupe_index:
+    path:     /groupe
+    defaults: { _controller: "PlanBundle:Groupe:index" }
+    methods:  GET
+salles_order:
+    path:     /Sallesor
+    defaults: { _controller: "PlanBundle:Salles:order" }
+    methods:  GET
+salles_ordernom:
+    path:     /Sallesorn
+    defaults: { _controller: "PlanBundle:Salles:ordernom" }
+    methods:  GET
+
+
+
+
+
+groupe_show:
+    path:     /groupe/{idGroup}/show
+    defaults: { _controller: "PlanBundle:Groupe:show" }
+    methods:  GET
+groupe_Kids:
+    path:     /groupe/show2
+    defaults: { _controller: "PlanBundle:Groupe:Kids" }
+    methods:  GET
+
+
+
+groupe_new:
+    path:     /groupe/new
+    defaults: { _controller: "PlanBundle:Groupe:new" }
+    methods:  [GET, POST]
+
+groupe_edit:
+    path:     /groupe/{idGroup}/edit
+    defaults: { _controller: "PlanBundle:Groupe:edit" }
+    methods:  [GET, POST]
+
+groupe_delete:
+    path:     /groupe/{idGroup}/delete
+    defaults: { _controller: "PlanBundle:Groupe:delete" }
+    methods:  DELETE
+groupe_imp:
+    path:     /groupe/{nomGroup}/imp
+    defaults: { _controller: "PlanBundle:Groupe:imp" }
+
+enfant_index:
+    path:     /Enfant
+    defaults: { _controller: "PlanBundle:enfant:index" }
+    methods:  GET
+
+enfant_show:
+    path:     /Enfant/{id}/show
+    defaults: { _controller: "PlanBundle:enfant:show" }
+    methods:  GET
+
+enfant_new:
+    path:     /Enfant/new
+    defaults: { _controller: "PlanBundle:enfant:new" }
+    methods:  [GET, POST]
+
+enfant_edit:
+    path:     /Enfant/{id}/edit
+    defaults: { _controller: "PlanBundle:enfant:edit" }
+    methods:  [GET, POST]
+
+
+
+enfant_delete:
+    path:     /Enfant/{id}/delete
+    defaults: { _controller: "PlanBundle:enfant:delete" }
+    methods:  DELETE
+
+enfant_updatekid:
+    path:     /Enfant/{id}/edit3
+    defaults: {_controller: "PlanBundle:enfant:updatekid"}
+
+
+
+Reclamation_readRec:
+    path:     /Reclam/{nomGroup}
+    defaults: {_controller: "PlanBundle:Reclamation:ReadRec"}
+
+
+Reclamation_AddRec:
+         path:     /Reclama/{sujet}/{nomGroup}
+         defaults: {_controller: "PlanBundle:Reclamation:Addrec"}
+
+
+
+
+
+
+
+
+
+
+
+

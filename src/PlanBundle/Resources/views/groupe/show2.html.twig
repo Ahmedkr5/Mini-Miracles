@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1 style="font-family: 'Times New Roman' ;">Les enfants sans groupe</h1>
+    <br><br>
+
+
+<br><br>
+    <table  class="table table-hover  " style="background-color: white;">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Afficher</th>
+            <th>Modifier</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for e in grouplist %}
+            <tr>
+                <td>{{ e.nom }}</td>
+                <td>{{ e.prenom }}</td>
+                <td>
+
+
+                            <a href="{{ path('enfant_show', { 'id': e.id }) }}" class= "fa fa-user" style="color: #ce8483;"></a>
+
+                </td>
+                <td>
+
+
+                        <a href="{{ path('enfant_updatekid', { 'id': e.id }) }}" class="fa fa-edit" style="color: green;" ></a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br><hr>
+    <a href="{{ path('groupe_index') }}" class="btn btn-primary">Retour</a>
+{% endblock %}

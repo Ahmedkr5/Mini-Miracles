@@ -1,0 +1,192 @@
+<?php
+
+namespace PlanBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Emploi
+ *
+ * @ORM\Table(name="emploi", indexes={@ORM\Index(name="id_group", columns={"id_group"}), @ORM\Index(name="id_salle", columns={"id_salle"})})
+ * @ORM\Entity
+ */
+class Emploi
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idemp", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idemp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="jour", type="string", length=25, nullable=false)
+     */
+    private $jour;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="seance_matin", type="string", length=25, nullable=false)
+     */
+    private $seanceMatin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="seance_soir", type="string", length=25, nullable=false)
+     */
+    private $seanceSoir;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Salles")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_salle", referencedColumnName="num_salle")
+     * })
+     */
+    private $idSalle;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Groupe")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_group", referencedColumnName="id_group")
+     * })
+     */
+    private $idGroup;
+
+
+
+    /**
+     * Get idemp
+     *
+     * @return integer
+     */
+    public function getIdemp()
+    {
+        return $this->idemp;
+    }
+
+    /**
+     * Set jour
+     *
+     * @param string $jour
+     *
+     * @return Emploi
+     */
+    public function setJour($jour)
+    {
+        $this->jour = $jour;
+
+        return $this;
+    }
+
+    /**
+     * Get jour
+     *
+     * @return string
+     */
+    public function getJour()
+    {
+        return $this->jour;
+    }
+
+    /**
+     * Set seanceMatin
+     *
+     * @param string $seanceMatin
+     *
+     * @return Emploi
+     */
+    public function setSeanceMatin($seanceMatin)
+    {
+        $this->seanceMatin = $seanceMatin;
+
+        return $this;
+    }
+
+    /**
+     * Get seanceMatin
+     *
+     * @return string
+     */
+    public function getSeanceMatin()
+    {
+        return $this->seanceMatin;
+    }
+
+    /**
+     * Set seanceSoir
+     *
+     * @param string $seanceSoir
+     *
+     * @return Emploi
+     */
+    public function setSeanceSoir($seanceSoir)
+    {
+        $this->seanceSoir = $seanceSoir;
+
+        return $this;
+    }
+
+    /**
+     * Get seanceSoir
+     *
+     * @return string
+     */
+    public function getSeanceSoir()
+    {
+        return $this->seanceSoir;
+    }
+
+    /**
+     * Set idSalle
+     *
+     * @param \PlanBundle\Entity\Salles $idSalle
+     *
+     * @return Emploi
+     */
+    public function setIdSalle(\PlanBundle\Entity\Salles $idSalle = null)
+    {
+        $this->idSalle = $idSalle;
+
+        return $this;
+    }
+
+    /**
+     * Get idSalle
+     *
+     * @return \PlanBundle\Entity\Salles
+     */
+    public function getIdSalle()
+    {
+        return $this->idSalle;
+    }
+
+    /**
+     * Set idGroup
+     *
+     * @param \PlanBundle\Entity\Groupe $idGroup
+     *
+     * @return Emploi
+     */
+    public function setIdGroup(\PlanBundle\Entity\Groupe $idGroup = null)
+    {
+        $this->idGroup = $idGroup;
+
+        return $this;
+    }
+
+    /**
+     * Get idGroup
+     *
+     * @return \PlanBundle\Entity\Groupe
+     */
+    public function getIdGroup()
+    {
+        return $this->idGroup;
+    }
+}

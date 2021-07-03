@@ -1,0 +1,52 @@
+
+    {% for g in grpnom %}
+        <div align="center">
+    <h1 style= "color:red;font-family: 'Times New Roman'">Emploi du Temps</h1>
+        <h3 style="color: red;font-family: 'Times New Roman'">{{ g.nomGroup }}</h3>
+    {% endfor %}
+    </div>
+    <br>
+<div style="width: 100%; overflow: hidden;">
+    <div style="width: 150px; float: left;margin-top: 25px;">
+<table  class="table" style="height: 480px;width: 150px;">
+
+    <tr style="background-color:deepskyblue;font-size: 20px;"><th>Lundi</th></tr>
+    <tr style="background-color:limegreen;font-size: 20px;"><th>Mardi</th></tr>
+    <tr style="background-color:orange;font-size: 20px;"><th>Mercredi</th></tr>
+    <tr style="background-color:hotpink;font-size: 20px;"><th>Jeudi</th></tr>
+    <tr style="background-color:mediumpurple;font-size: 20px;"><th>Vendredi</th></tr>
+    <tr style="background-color:lightgrey;font-size: 20px;"><th>Samedi</th></tr>
+</table>
+    </div>
+    <div style="margin-left: 95px;">
+    <table class="table" style="height: 300px;width: 1000px;"  >
+        <tbody>
+            <tr style="height: 10px">
+
+              <th  style="background-color: grey;text-align: center;width: 475px;color: white;"> 09H:00 12H:15 </th>
+                <th style="background-color: grey;text-align: center;width: 50px;color: white;"> Pause </th>
+                <th  style="background-color: grey;text-align: center;width: 475px;color: white;"> 13H:00 16H:45 </th>
+            </tr>
+            {% for emploi in emploilist %}
+            <tr style="height: 78px;">
+
+                {% if emploi.seanceMatin == '1' %}
+                    <th style="background-color: #ce8483;text-align:center;border-bottom: #ce8483">Salle {{ emploi.nomSalle }} </th>
+                {% else %}
+                    <td style="background-color:white;"> </td>
+                {% endif %}
+
+                <td style="background-color: grey;"></td>
+                {% if  emploi.seanceSoir  == '1' %}
+                     <th style="background-color: #ce8483;text-align:center;">salle {{ emploi.nomSalle }} </th>
+                {% else %}
+                    <td style="background-color: white;"> </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    </div>
+
+</div>

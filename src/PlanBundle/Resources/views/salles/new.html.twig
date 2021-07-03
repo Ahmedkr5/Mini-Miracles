@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br><br>
+
+    <h1 style="font-family: 'Times New Roman';margin-left: 200px"> Ajouter une salle</h1>
+
+
+    <br><br><br>
+    <table class="table" style="background-color: white;width: 800px;margin-left: 200px">
+        <tr><td>
+                {{ form_start(form) }}
+                {{ form_label(form.nomSalle) }}
+                {{ form_widget(form.nomSalle) }}</td>
+            <tr><td>
+                {{ form_label(form.capacite) }}
+                {{ form_widget(form.capacite) }}</td>
+
+            </tr>
+        </tr>
+    </table>
+
+    <a href="{{ path('salles_index') }}"  class="btn btn-primary" style="font-size: 18px;margin-left: 200px">Retour</a>
+    <input type="submit" value="Ajouter"  class="btn btn-success" style="font-size: 18px;margin-left: 500px"/>
+    {{ form_end(form) }}
+{% endblock %}

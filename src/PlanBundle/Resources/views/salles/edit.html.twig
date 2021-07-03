@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br>
+    <h1 style="font-family: 'Times New Roman';margin-left: 200px">Modifier la Salle</h1>
+    <br><br><br>
+    <table class="table" style="background-color: white;margin-left: 200px">
+        <tr><td>
+                {{ form_start(edit_form) }}
+
+<b>Nom salle</b>
+                {{ form_widget(edit_form.nomSalle) }}</td></tr>
+            <tr><td><b>Capacité </b>
+                    {{ form_widget(edit_form.capacite) }}</td>
+            <td>
+                <input type="submit" value="Modifier"class="btn btn-success" />
+                {{ form_end(edit_form) }}</td>
+            <td>    {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer" class="btn btn-danger">
+                {{ form_end(delete_form) }}</td>
+
+        </tr>
+
+
+    </table>
+
+    <a href="{{ path('salles_index') }}" class="btn btn-primary" style="margin-left: 200px">Retour</a>
+
+{% endblock %}

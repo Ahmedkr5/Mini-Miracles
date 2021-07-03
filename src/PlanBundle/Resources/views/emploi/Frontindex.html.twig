@@ -1,0 +1,30 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+<div style="margin-left: 700px">
+    <h1 style="font-family: 'Times New Roman' ; ">Listes des Emplois du temps</h1>
+    <br><br>
+    <table  class="table table-hover  " style="background-color: white;width: 450px">
+        <thead>
+            <tr style="height: 45px;">
+                <th style="font-family: 'Times New Roman' ; font-size: 20px;width: 300px">Emploi</th>
+                <th style="font-family: 'Times New Roman' ;font-size: 20px ;width: 150px;">Afficher</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for emploi in emplois %}
+            <tr>
+                <td>Emploi {{ emploi.nomGroup }}</td>
+
+                <td>   <a href="{{ path('emploi_Frontshow', { 'idGroup': emploi.1 }) }}" class="fa fa-calendar" style="color: #ce8483;"> </a>  </td>
+            </tr>
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+<br><br>
+</div>
+
+
+{% endblock %}

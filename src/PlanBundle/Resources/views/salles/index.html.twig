@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 style="font-family: 'Times New Roman' ; margin-left: 300px;">Les salles </h1>
+<br><br>
+    <table class="table table-hover  " style="background-color: white;width: 1000px;margin-left: 300px; ">
+        <thead>
+            <tr>
+
+                <th style="font-family: 'Times New Roman' ;font-size: 18px ;width:250px;">Numéro salle             <a href="{{ path('salles_ordernom')}}"  class="fa fa-angle-double-down" style="color: #ce8483;font-size: 15px;" > </a></th>
+                <th style="font-family: 'Times New Roman' ;font-size: 18px ;width:250px;">Capacité                 <a href="{{ path('salles_order')}}"  class="fa fa-angle-double-down" style="color: #ce8483;font-size: 15px;"></a></th>
+                <th style="font-family: 'Times New Roman' ;font-size: 18px ;width:250px;">Afficher</th>
+                <th style="font-family: 'Times New Roman' ;font-size: 18px ;width:250px;">Modifier</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for salle in salles %}
+            <tr>
+                <td>{{ salle.nomSalle }}</td>
+                <td>{{ salle.capacite }}</td>
+                <td>
+
+                            <a href="{{ path('salles_show', { 'numSalle': salle.numSalle }) }}" class="fa fa-list-alt"  style="color: #ce8483;font-size: 15px;"></a>
+                </td>  <td>
+                            <a href="{{ path('salles_edit', { 'numSalle': salle.numSalle }) }}" class="fa fa-edit" style="color: green;"></a>
+
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+<br><br>
+
+            <a href="{{ path('salles_new') }}" class="btn btn-primary" style="margin-left:300px ;">Ajouter une salle</a>
+
+{% endblock %}

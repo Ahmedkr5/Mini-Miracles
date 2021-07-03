@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br>
+    <h1 style="font-family: 'Times New Roman';margin-left: 200px">Détails</h1>
+    <br><br>
+    <table  class="table"style="background-color: white;margin-left: 200px">
+        <tbody>
+            <tr>
+                <th>Nomsalle</th>
+                <td>{{ salle.nomSalle }}</td>
+            </tr>
+            <tr>
+                <th>Capacite</th>
+                <td>{{ salle.capacite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+        <div style="width: 100%; overflow: hidden;">
+            <div style="width: 10px; float: left;">
+                <br><br>
+            <a href="{{ path('salles_index') }}" class="btn btn-primary" style="margin-left: 200px">Retour</a></div>
+            <div style="margin-left: 1000px;">
+                <br><br>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer" class="btn btn-danger">
+                {{ form_end(delete_form) }}
+            </div>
+
+
+        </div>
+{% endblock %}
