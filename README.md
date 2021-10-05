@@ -2,16 +2,16 @@ Mini miracles is a project made for a kindergarten and this is the web version o
 This was an integrated project and my module was Planning (Timetable,classrooms,groups).I used knp_snappy_bundle for generating a pdf timetable file and Swift Mailer for gmail 
 
 
-###Screenshots:
+## Screenshots:
 
-###Group Managment:
+### Group Managment:
 
 ![gestiongrouppreuve PNG](https://user-images.githubusercontent.com/60600220/136012266-b6249ac2-1b6b-47d9-9806-d4cd7be91aa5.png)
 
 
 ![Capture PNG](https://user-images.githubusercontent.com/60600220/136012208-cc318fc1-e3ba-4881-853b-dc08d08fb6e1.png)
 
-###Timetables Managment:
+### Timetables Managment:
 
 
 ![gestionemploiPreuve PNG](https://user-images.githubusercontent.com/60600220/136012285-ce6f7c4c-1c93-4a06-b69a-733d0fa25ddc.png)
