@@ -1,3 +1,15 @@
+Mini miracles is a project made for a kindergarten and this is the web version of it which was made by using symfony 3.4.
+This was an integrated project and my module was Planning (Timetable,classrooms,groups).I used knp_snappy_bundle for generating a pdf timetable file and Swift Mailer for gmail 
+
+
+
+
+
+
+
+
+
+
 Symfony Standard Edition
 ========================
 
